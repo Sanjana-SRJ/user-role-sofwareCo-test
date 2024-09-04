@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "0df0f46c-2cd3-473e-b7c2-cf02924749c7",
+		"name": "SoftwareCO Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31023119",
+		"_collection_link": "https://planetary-sunset-663431.postman.co/workspace/Messenger-App~f33f6169-79bd-4333-ab6b-f189774847dc/collection/31023119-0df0f46c-2cd3-473e-b7c2-cf02924749c7?action=share&source=collection_link&creator=31023119"
+	},
+	"item": [
+		{
+			"name": "Add new role",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"role_name\": \"user\",\r\n    \"access_modules\" : [\"userModule\", \"orderModule\", \"transactionModule\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4003/v1/add-new-role"
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Test\",\r\n    \"last_name\": \"Tesitng\",\r\n    \"email\": \"test-1@yahoo.com\",\r\n    \"password\": \"Test@123\",\r\n    \"role_id\": \"66d74ae4596a5f5f33658912\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4003/v1/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"sanjana@gmail.com\",\r\n    \"password\" :\"Sanj@122\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4003/v1/login"
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-user-details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4003/v1/get-all-user-details?search=a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4003",
+					"path": [
+						"v1",
+						"get-all-user-details"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-user-details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Sanjana\",\r\n    \"password\" : \"Sanj@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4003/v1/update-user-details/:user_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4003",
+					"path": [
+						"v1",
+						"update-user-details",
+						":user_id"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": "66d74bad3f3fdb2c318c3c90"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4003/v1/delete-user/:user_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4003",
+					"path": [
+						"v1",
+						"delete-user",
+						":user_id"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": "66d74beb3f3fdb2c318c3c93"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-roles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:4003/v1/get-all-roles"
+			},
+			"response": []
+		},
+		{
+			"name": "update-role-details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"access_modules\" : [\"transactionModule\"],\r\n    \"remove_module\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4003/v1/update-role-details/:role_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4003",
+					"path": [
+						"v1",
+						"update-role-details",
+						":role_id"
+					],
+					"variable": [
+						{
+							"key": "role_id",
+							"value": "66d74ae4596a5f5f33658912"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-role",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4003/v1/delete-role/:role_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4003",
+					"path": [
+						"v1",
+						"delete-role",
+						":role_id"
+					],
+					"variable": [
+						{
+							"key": "role_id",
+							"value": "66d74af1596a5f5f33658912"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check-user-has-access-to-a-module",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"module_to_check\":\"paymentModule\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4003/v1/check-user-has-access-to-a-module/:user_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4003",
+					"path": [
+						"v1",
+						"check-user-has-access-to-a-module",
+						":user_id"
+					],
+					"variable": [
+						{
+							"key": "user_id",
+							"value": "66d74bad3f3fdb2c318c3c90"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-all-users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\" :\"zulu zulu\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4003/v1/update-all-users"
+			},
+			"response": []
+		},
+		{
+			"name": "update-multiple-users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"updates\" : [\r\n    {\r\n        \"user_id\": \"66d74bad3f3fdb2c318c3c90\", // Example user ID\r\n        \"updateFields\": { \"first_name\": \"John\" }\r\n    },\r\n    {\r\n        \"user_id\": \"66d82420df4becfcb9d70c1d\", // Example user ID\r\n        \"updateFields\": { \"last_name\": \"Zenedaya\", \"email\": \"newexample@example.com\" }\r\n    }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4003/v1/update-multiple-users"
+			},
+			"response": []
+		}
+	]
+}
