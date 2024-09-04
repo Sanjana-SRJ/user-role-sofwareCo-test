@@ -11,6 +11,7 @@ roleName: A string representing the name of the role.
 access_modules: A list of modules that can be accessed by users assigned this role.
 createdAt: A timestamp indicating when the role was created.
 active: A boolean flag to indicate whether the role is active.
+
 **Features:**
 
 CRUD Operations: Create, read, update, and delete operations for managing roles.
@@ -22,6 +23,7 @@ Value Removal: Allows for the removal of specific access modules from the list.
 
 Basic User Details: Includes fields such as first_name, last_name, email, etc.
 role: A reference field linking each user to a specific role in the Role module.
+
 **Features:**
 
 **CRUD Operations**: Full CRUD operations for managing users.
